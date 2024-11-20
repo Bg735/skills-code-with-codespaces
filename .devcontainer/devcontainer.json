@@ -14,5 +14,5 @@
         "openFiles": ["codespace.md"]
     }
   },
-  "postCreateCommand": "echo '# Writing code upon codespace creation!' >> codespace.md && echo 'postCreateCommand executed' >> codespace.md"
+  "postCreateCommand": "chmod +x setup.sh && ./setup.sh"
 }
