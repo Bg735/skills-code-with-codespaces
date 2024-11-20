@@ -1,18 +1,19 @@
 {
-  // Name this configuration
-  "name": "Codespace for Skills!",
-  // Use the base codespace image
-  "image": "mcr.microsoft.com/vscode/devcontainers/universal:latest",
-
-  "remoteUser": "codespace",
-  "overrideCommand": false,
-  "customizations": {
-    "vscode": {
-        "extensions": ["GitHub.copilot"]
+    "name": "IdS-Codespace",
+    "image": "mcr.microsoft.com/vscode/devcontainers/java:0-8",
+    "features": {
+        "ghcr.io/devcontainers/features/java:8": {
+            "installMaven": true
+        }
     },
-    "codespaces":{
-        "openFiles": ["codespace.md"]
-    }
-  },
-  "postCreateCommand": "chmod +x setup.sh && ./setup.sh"
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "vscjava.vscode-java-pack",
+                "vscjava.vscode-maven",
+                "eamodio.gitlens"
+            ]
+        }
+    },
+    "postCreateCommand": "chmod +x setup.sh && ./setup.sh && sudo apt-get update && sudo apt-get install -y doxygen"
 }
