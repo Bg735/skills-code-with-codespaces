@@ -15,5 +15,5 @@
             ]
         }
     },
-    "postCreateCommand": "chmod +x setup.sh && ./setup.sh && sudo apt-get update && sudo apt-get install -y doxygen"
+    "postCreateCommand": "sudo apt-get update && sudo apt-get install -y doxygen"
 }
